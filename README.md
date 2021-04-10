@@ -62,6 +62,30 @@ To test that all went well, I use ssh to login to the servers, without using a p
 ssh <USERNAME>@<IP-ADDRESS>
 ```
 
-## 5. Working on Windows
+
+## 6. Confirming your installation
+
+Running the ping command on all the inventory should return a JSON message for each host.
+```bash
+ansible all -m ping
+```
+```json
+<USERNAME>@<IP-ADDRESS> | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+<USERNAME>@<IP-ADDRESS> | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+```
+
+## 6. Working on Windows
 
 [WSL 2](https://aka.ms/wsl)
