@@ -1,6 +1,6 @@
 # Ansible - working from home
 
-A small project to automate the provisioning of a 2 small ARM servers (managed nodes) running Unifi Controller, Homebridge, Plex, etc.
+A small project to automate the provisioning of 2 small ARM servers (managed nodes) running Unifi Controller, Homebridge, Plex, etc.
 My stack of choise is [Ansible](https://docs.ansible.com/ansible/latest/) with [Raspbian](https://github.com/homebridge/homebridge-raspbian-image/wiki/Getting-Started) and [Ubuntu](https://wiki.odroid.com/odroid-xu4/os_images/linux/ubuntu_5.4/ubuntu_5.4) for the servers.
 
 Ansible is an agentless automation tool that you install on a control node. From the control node, Ansible manages machines and other devices remotely (by default, over the SSH protocol).
@@ -50,7 +50,7 @@ ssh-keygen -t rsa
 
 ## 4. Copying public key to the managed nodes (servers)
 
- I will nedd to replace ``<USERNAME>@<IP-ADDRESS>`` for each server. This command will ask for the password.
+ I will need to replace ``<USERNAME>@<IP-ADDRESS>`` for each server. This command will ask for the password.
 
 ```bash
 cat ~/.ssh/id_rsa.pub | ssh <USERNAME>@<IP-ADDRESS> 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys'
@@ -63,7 +63,7 @@ ssh <USERNAME>@<IP-ADDRESS>
 ```
 
 
-## 6. Confirming your installation
+## 6. Confirming the installation
 
 Running the ping command on all the inventory should return a JSON message for each host.
 ```bash
