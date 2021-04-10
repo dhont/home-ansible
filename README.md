@@ -24,9 +24,10 @@ These are the servers that need to be configured on the Controller Node. Ansible
 sudo nano /etc/ansible/hosts
 ```
 
-I edited this file by adding the IP addresses of the 2 servers at the begining of the file.
+I edited this file by adding the IP addresses of the 2 servers at the begining of the file and `[microservers]` group.
 
-```
+```bash
+[microservers]
 <USERNAME>@<IP-ADDRESS>
 <USERNAME>@<IP-ADDRESS>
 # This is the default ansible 'hosts' file.
@@ -86,6 +87,30 @@ ansible all -m ping
 }
 ```
 
-## 6. Working on Windows
+## 6. [Optional] Supressing interpreter python  warnings
+
+Edit Ansible configuration file
+
+```bash
+sudo nano /etc/ansible/ansible.cfg
+```
+
+and add below `[defaults]` line:
+
+```bash
+# config file for ansible -- https://ansible.com/
+# ===============================================
+
+# nearly all parameters can be overridden in ansible-playbook
+# or with command line flags. ansible will read ANSIBLE_CONFIG,
+# ansible.cfg in the current working directory, .ansible.cfg in
+# the home directory or /etc/ansible/ansible.cfg, whichever it
+# finds first
+
+[defaults]
+interpreter_python=auto_silent
+```
+
+## 7. Working on Windows
 
 [WSL 2](https://aka.ms/wsl)
